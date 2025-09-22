@@ -100,4 +100,14 @@ public class Search_Steps {
 		}
 	}	
 	
+	@Then("user cicks on product image")
+	public void user_cicks_on_product_image() {
+	    sp.clickIMacImg();
+	}
+	
+	@Given("user clicks on product comparison link from the success message")
+	public void user_clicks_on_product_comparison_link_from_the_success_message() {
+	    sp.clickProdCompLink();
+	}
+	
 }

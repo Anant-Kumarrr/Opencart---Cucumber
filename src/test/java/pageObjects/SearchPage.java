@@ -58,6 +58,12 @@ public class SearchPage extends BasePage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement successMessage;
 	
+	@FindBy(xpath = "//img[@class='img-responsive']")
+	WebElement iMacImg; 
+	
+	@FindBy(xpath = "//a[normalize-space()='product comparison']")
+	WebElement productCompLink;
+	
 	public void searchProduct(String prod) {
 		searchBox.sendKeys(prod);
 		searchButton.click();
@@ -122,13 +128,13 @@ public class SearchPage extends BasePage {
 	
 	public void clickListViewBtn() throws InterruptedException {
 		listViewBtn.click();
-		Thread.sleep(5000);;
+		Thread.sleep(3000);;
 	}
 
 	public boolean clickAddToCartBtn() throws InterruptedException {
 		boolean result;
 		addToCartBtn.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		try {
 			if(successMessage.isDisplayed()) {
 				result = true;
@@ -146,7 +152,7 @@ public class SearchPage extends BasePage {
 	public boolean addToWishListBtn() throws InterruptedException {
 		boolean result;
 		addToWishListBtn.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		try {
 			if(successMessage.isDisplayed()) {
 				result = true;
@@ -164,7 +170,7 @@ public class SearchPage extends BasePage {
 	public boolean compareProductBtn() throws InterruptedException {
 		boolean result;
 		compareBtn.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		try {
 			if(successMessage.isDisplayed()) {
 				result = true;
@@ -177,5 +183,13 @@ public class SearchPage extends BasePage {
 			result = false;
 		}
 		return result;	
+	}
+	
+	public void clickIMacImg() {
+		iMacImg.click();  
+	}
+	
+	public void clickProdCompLink() {
+		productCompLink.click();
 	}
 }
